@@ -17,9 +17,12 @@ const ContaBody = styled.div`
     flex-direction:column;
     align-items:center;
     justify-content:space-around;
-    
 
 `
+const NavConta = styled.div`
 
+        
+
+`
 
 export {StyledLink, ContaBody};
