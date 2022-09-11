@@ -10,10 +10,10 @@ function Conta() {
         <ContaBody>
             <NavConta><h2>Olá, Fulano</h2><ion-icon name="log-out-outline"></ion-icon></NavConta>
             <HistoryConta>
-                <h1>
+                {/* <h1>
                     <p>Não há registros de </p>
                     <p>entrada ou saída</p>
-                </h1>
+                </h1> */}
 
             </HistoryConta>
             <BottonConta>

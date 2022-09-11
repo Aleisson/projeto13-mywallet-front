@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { LoginForm } from "../LoginPage/style"
+
 
 const StyledLink = styled(Link)`
 
@@ -112,5 +114,28 @@ const ButtonConta = styled.div`
 
 `
 
+const MovimentoBody = styled(ContaBody)`
 
-export { StyledLink, ContaBody, NavConta, HistoryConta, BottonConta, ButtonConta };
+   
+    height: 80vw;
+
+`
+
+const MovimentoForm = styled(LoginForm)`
+    
+ 
+    width: 100%;
+
+    input{
+        width: 100%;
+    }
+
+    button{
+        width: 100%;
+    }
+
+`
+
+
+
+export { StyledLink, ContaBody, NavConta, HistoryConta, BottonConta, ButtonConta, MovimentoBody, MovimentoForm};
