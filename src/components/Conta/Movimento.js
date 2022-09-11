@@ -1,8 +1,19 @@
 import { MovimentoBody, NavConta, MovimentoForm } from './style'
-
+import { useNavigate } from "react-router-dom";
 
 function Movimento() {
 
+    const [form, setForm] = useState({});
+
+
+    function handleForm({value, name}){
+
+        setForm({
+            ...form,
+            [name]: value,
+        })
+        //console.log(form);
+    }
 
     return (
         <MovimentoBody>
