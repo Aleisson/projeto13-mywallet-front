@@ -73,7 +73,77 @@ const HistoryConta = styled.div`
         
     }
 
+   div{
+    width:100%;
+   }
+
 `
+const MovimentoConta = styled.h2`
+
+    
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    height: 10vw;
+    width:100%;    
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px;
+
+`
+const ContaTempo = styled.p`
+
+    color: #C6C6C6;
+    margin-right: 8px;
+    
+
+`
+const ValorConta = styled.p`
+
+    color:${props => props.cor};
+    
+
+`
+
+
+const SaldoConta = styled.div`
+
+    height: 12vw;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position: relative;
+    top: 0;
+    padding:2vw;
+
+    h2{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 20px;
+        color: #000000;
+    }
+
+    h3{
+
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 20px;
+        text-align: right;
+        color: ${props => props.cor};
+
+
+    }
+
+`
+
 
 const BottonConta = styled.div`
 
@@ -90,7 +160,7 @@ const BottonConta = styled.div`
 const ButtonConta = styled.div`
 
     background-color: #A328D6;
-    border-radius: 2.5px;
+    border-radius: 3.5px;
     width: 42vw;
     height:100%;
     display:flex;
@@ -116,7 +186,6 @@ const ButtonConta = styled.div`
 
 const MovimentoBody = styled(ContaBody)`
 
-   
     height: 80vw;
 
 `
@@ -138,4 +207,5 @@ const MovimentoForm = styled(LoginForm)`
 
 
 
-export { StyledLink, ContaBody, NavConta, HistoryConta, BottonConta, ButtonConta, MovimentoBody, MovimentoForm};
+
+export { StyledLink, ContaBody, NavConta, HistoryConta, BottonConta, ButtonConta, MovimentoBody, MovimentoForm, SaldoConta, MovimentoConta, ContaTempo, ValorConta };
