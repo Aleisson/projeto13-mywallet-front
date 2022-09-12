@@ -1,6 +1,6 @@
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from 'axios';
 import { LoginBody, LoginForm, StyledLink } from "./style";
 
 
@@ -25,9 +25,20 @@ function Login() {
         event.preventDefault();
 
         const {email, password} = form;
-        console.log({email, password});
+        // console.log({email, password});
 
-        navigate("/conta");
+        const promise = axios.post('http://localhost:5000/sign-in',{email,password});
+
+        promise.then( (res) =>{
+            console.log(res.data);
+            navigate("/conta");
+        })
+
+        promise.catch((res) =>{
+            alert("Usuário ou Senha inválida");
+        })
+
+
     }
 
 

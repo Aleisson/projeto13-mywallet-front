@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 
 import { CadastroBody, CadastroForm, StyledLink } from "./style"
 
@@ -31,10 +31,20 @@ function Cadastro() {
             return;
         }
 
-        console.log({name, email, password});
+        // console.log({name, email, password});
+        const promise = axios.post('http://localhost:5000/sign-up',{name, email,password});
 
-        alert("Usuário Cadastrado");
-        navigate("/conta");
+        promise.then( () =>{
+            alert("Usuário Cadastrado");
+            navigate("/");
+        })
+
+        promise.catch(() =>{
+            alert("Usuário Inválido");
+        })
+
+        
+
     }
 
 

@@ -1,8 +1,34 @@
+import axios from "axios";
+import { useState,useEffect } from "react";
 import { StyledLink, ContaBody, NavConta, HistoryConta, BottonConta, ButtonConta, SaldoConta, MovimentoConta, ContaTempo, ValorConta } from "./style";
 
 
 
 function Conta() {
+
+    const [movimentos, setMovimentos] = [];
+
+
+    useEffect(() => {
+
+        // alert(urlMovies + `/${idMovie}/showtimes`)
+
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${idMovie}/showtimes`);
+
+        promise.then(
+            (res) => {
+                // console.log(res.data);
+                setHorarios(res.data);
+            }
+        );
+
+
+    },[]);
+
+    const promise = axios.get("http://localhost:5000/movimento", { headers: { "Authorization": `Bearer ad72a5df-4555-4159-83c9-befde8ff99b1`, "user": "caio beck" } })
+
+    promise.then(res => setMovimentos(res.data));
+
 
 
     return (
@@ -11,11 +37,7 @@ function Conta() {
             <NavConta><h2>Olá, Fulano</h2><ion-icon name="log-out-outline"></ion-icon></NavConta>
             <HistoryConta>
 
-                <div>
-                    {/* <h1>
-                    <p>Não há registros de </p>
-                    <p>entrada ou saída</p>
-                </h1> */}
+                {movimentos ?<><div>
                     <MovimentoConta><ContaTempo>30/10</ContaTempo><p>Almoço mãe</p><ValorConta cor={"#03AC00"}>39,90</ValorConta></MovimentoConta>
                     <MovimentoConta><ContaTempo>30/10</ContaTempo><p>teste</p><ValorConta cor={"#03AC00"}>39,90</ValorConta></MovimentoConta>
                     <MovimentoConta><ContaTempo>30/10</ContaTempo><p>Almoço mãe</p><ValorConta cor={"#03AC00"}>39,90</ValorConta></MovimentoConta>
@@ -25,7 +47,10 @@ function Conta() {
                         <h2>SALDO</h2>
                         <h3>2849,96</h3>
                     </SaldoConta>
-                </div>
+                </div> </>: <h1>
+                    <p>Não há registros de </p>
+                    <p>entrada ou saída</p>
+                </h1>}
 
             </HistoryConta>
             <BottonConta>
